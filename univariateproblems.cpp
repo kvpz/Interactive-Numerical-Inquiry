@@ -7,13 +7,13 @@ UnivariateProblems::UnivariateProblems(QWidget *parent) :
   ui(new Ui::UnivariateProblems)
 {
   ui->setupUi(this);
-  ui->combox_SPRoutines->setEditable(false);
-  ui->combox_SPRoutines->addItem("x^3 + 4x^2 - 10");
+  ui->specialRoutines_cbox_bisection->setEditable(false);
+  ui->specialRoutines_cbox_bisection->addItem("x^3 + 4x^2 - 10");
 
   ui->radio_special->setChecked(true);
 
   // the first special function will be placed in f(x) box
-  ui->f_x_input->setText(ui->combox_SPRoutines->itemText(0));
+  ui->f_x_input->setText(ui->specialRoutines_cbox_bisection->itemText(0));
   bisection = new BisectionMethod(this);
   bisection->setLeftBound(1);
   bisection->setRightBound(2);
@@ -33,7 +33,7 @@ UnivariateProblems::~UnivariateProblems()
 void UnivariateProblems::on_radio_special_clicked()
 {
   qDebug() << "Special radio button is selected";
-  ui->f_x_input->setText(ui->combox_SPRoutines->itemText(0));
+  ui->f_x_input->setText(ui->specialRoutines_cbox_bisection->itemText(0));
 }
 
 void UnivariateProblems::on_radio_general_clicked()

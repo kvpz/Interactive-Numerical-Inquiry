@@ -11,7 +11,6 @@
 #define lapack_complex_double std::complex<double>
 
 /******************************************************/
-#include <lapacke.h>
 #include "tools.h"
 
 int main(int argc, char *argv[])

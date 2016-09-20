@@ -54,8 +54,6 @@ win32:RC_ICONS = INI2.ico # 16x16 icon
 #DISTFILES += \
 #    README.md
 
-#CONFIG += qwt
-
 
 #INCLUDEPATH += $$PWD/../
 #DEPENDPATH += $$PWD/../
@@ -84,11 +82,10 @@ LIBS += \
 #    -llibtmglib \
     -llibblas
 
-INCLUDEPATH += $$PWD/../include \
-               $$PWD/mycpp \
-               $$PWD/mytcpp \
-               $$PWD/mySparse
-DEPENDPATH += $$PWD/../include
+CONFIG += qwt
+CONFIG += qwtmathml
+
+DEPENDPATH += $$PWD\..\include
 
 
 DISTFILES += \

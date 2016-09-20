@@ -2,20 +2,8 @@
 #define TESTBENCH_H
 
 #include <QWidget>
-//#include <lapacke.h>
 #include "tools.h"
-#include "vector.h"
-#include "matrix.h"
-#include "matrix_util.h"
 
-#include "sparse.h"
-#include "sparse_util.h"
-
-// in lieu of makefile
-//#include "xstring.cpp"
-//#include "primes.cpp"
-//#include "bitvect.cpp"
-//#include "hashfunctions.cpp"
 
 namespace Ui {
   class TestBench;
