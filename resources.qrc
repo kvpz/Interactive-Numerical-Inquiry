@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>IntNumInq.ico</file>
+    </qresource>
+    <qresource prefix="/images"/>
+</RCC>
