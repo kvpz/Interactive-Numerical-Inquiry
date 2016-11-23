@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1003</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1003</width>
+    <height>617</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2000</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Interactive Numerical Inquiry 0.0.2</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*
+{
+	background: qradialgradient(cs: 0.3, cy: -0.4, fx: 0.3, fy: -0.4, radius: 1.3, stop: 0 #fff, stop: 1 #888);
+	color: rgb(255,255,255);
+	border: 0px solid #ffffff;
+}
+
+QPushButton#Testbench,QPushButton#SingleVarSol,
+QPushButton#button_direct_solver
+{
+	background: gradialgradient(cs: 0.5, cy: - 0.5, fx: 05., fy: -0.5,
+		radius: 1.5, stop: 0 #fff, stop 1 #999);
+	font: bold 14px;
+	border-width: 10px;
+	color: #337733;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="maximumSize">
+    <size>
+     <width>1300</width>
+     <height>750</height>
+    </size>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QSplitter" name="splitter">
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>0</number>
+      </property>
+      <widget class="QLabel" name="ProgramTitle">
+       <property name="minimumSize">
+        <size>
+         <width>206</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>206</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Yu Mincho Demibold</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel#ProgramTitle{
+background-color: rgba(45,245,246,0);
+color: #2AF1C9;
+border: rgba(255,255,255,0);
+}</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Interative Numerical Inquiry&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <property name="indent">
+        <number>5</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_main">
+       <property name="minimumSize">
+        <size>
+         <width>800</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>800</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255,255,255,0);
+color: #DDDDDD;
+border: rgba(255,255,255,0);</string>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="indent">
+        <number>1</number>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="backToMainButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton#backToMainButton
+{
+	background: #AACAAA;
+	color: black;
+	font: bold;
+	border: 1px solid black;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;-  back to main window</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>2000</width>
+        <height>1000</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="mainPage">
+       <property name="minimumSize">
+        <size>
+         <width>939</width>
+         <height>469</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1200</width>
+         <height>600</height>
+        </size>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="2">
+         <widget class="QPushButton" name="button_direct_solver">
+          <property name="minimumSize">
+           <size>
+            <width>91</width>
+            <height>131</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Direct  Methods
+ for Solving
+ Linear Systems</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="Testbench">
+          <property name="minimumSize">
+           <size>
+            <width>91</width>
+            <height>131</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Test Bench</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="SingleVarSol">
+          <property name="minimumSize">
+           <size>
+            <width>91</width>
+            <height>131</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Solutions to
+ Single Variable
+ Problems</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="TestBench" name="TestbenchWidget">
+       <property name="maximumSize">
+        <size>
+         <width>920</width>
+         <height>420</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="UnivariateProblems" name="singleVarSol">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>920</width>
+         <height>420</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="DirectSolver" name="directSolverWidget">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>920</width>
+         <height>420</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1003</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_input_file"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionOpen_input_file">
+   <property name="text">
+    <string>Open input file</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TestBench</class>
+   <extends>QWidget</extends>
+   <header>testbench.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UnivariateProblems</class>
+   <extends>QWidget</extends>
+   <header>univariateproblems.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DirectSolver</class>
+   <extends>QWidget</extends>
+   <header>directsolver.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
